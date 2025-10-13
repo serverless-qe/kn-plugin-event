@@ -1,6 +1,6 @@
 # DO NOT EDIT! Generated Dockerfile for cmd/kn-event.
-ARG GO_BUILDER=registry.ci.openshift.org/openshift/release:rhel-8-release-golang-1.24-openshift-4.20
-ARG GO_RUNTIME=registry.access.redhat.com/ubi8/ubi-minimal
+ARG GO_BUILDER=registry.ci.openshift.org/openshift/release:rhel-9-release-golang-1.24-openshift-4.20
+ARG GO_RUNTIME=registry.access.redhat.com/ubi9/ubi-minimal
 
 FROM $GO_BUILDER as builder
 
@@ -24,14 +24,15 @@ COPY LICENSE /licenses/
 USER 65532
 
 LABEL \
-      com.redhat.component="openshift-serverless-1-kn-plugin-event-kn-event-rhel8-container" \
-      name="openshift-serverless-1/kn-plugin-event-kn-event-rhel8" \
+      com.redhat.component="openshift-serverless-1-kn-plugin-event-kn-event-rhel9-container" \
+      name="openshift-serverless-1/kn-plugin-event-kn-event-rhel9" \
       version=$VERSION \
       summary="Red Hat OpenShift Serverless 1 Kn Plugin Event Kn Event" \
       maintainer="serverless-support@redhat.com" \
       description="Red Hat OpenShift Serverless 1 Kn Plugin Event Kn Event" \
       io.k8s.display-name="Red Hat OpenShift Serverless 1 Kn Plugin Event Kn Event" \
       io.k8s.description="Red Hat OpenShift Serverless Kn Plugin Event Kn Event" \
-      io.openshift.tags="kn-event"
+      io.openshift.tags="kn-event" \
+      cpe="cpe:/a:redhat:openshift_serverless:1.38::el9"
 
 ENTRYPOINT ["/usr/bin/kn-event"]
