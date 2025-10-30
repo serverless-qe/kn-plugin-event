@@ -32,6 +32,8 @@ LABEL \
       io.k8s.display-name="Red Hat OpenShift Serverless 1 Kn Plugin Event Sender" \
       io.k8s.description="Red Hat OpenShift Serverless Kn Plugin Event Sender" \
       io.openshift.tags="kn-event-sender" \
+      vendor="Red Hat, Inc." \
+      release=$VERSION \
       cpe="cpe:/a:redhat:openshift_serverless:1.37::el9"
 
 ENTRYPOINT ["/usr/bin/kn-event-sender"]
