@@ -24,8 +24,8 @@ COPY LICENSE /licenses/
 USER 65532
 
 LABEL \
-      com.redhat.component="openshift-serverless-1-kn-plugin-event-kn-event-sender-rhel9-container" \
-      name="openshift-serverless-1/kn-plugin-event-kn-event-sender-rhel9" \
+      com.redhat.component="openshift-serverless-1-kn-plugin-event-sender-rhel9-container" \
+      name="openshift-serverless-1/kn-plugin-event-sender-rhel9" \
       version=$VERSION \
       summary="Red Hat OpenShift Serverless 1 Kn Plugin Event Kn Event Sender" \
       maintainer="serverless-support@redhat.com" \
@@ -33,6 +33,8 @@ LABEL \
       io.k8s.display-name="Red Hat OpenShift Serverless 1 Kn Plugin Event Kn Event Sender" \
       io.k8s.description="Red Hat OpenShift Serverless Kn Plugin Event Kn Event Sender" \
       io.openshift.tags="kn-event-sender" \
+      vendor="Red Hat, Inc." \
+      release=$VERSION \
       cpe="cpe:/a:redhat:openshift_serverless:1.38::el9"
 
 ENTRYPOINT ["/usr/bin/kn-event-sender"]
