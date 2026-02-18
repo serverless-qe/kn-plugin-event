@@ -1,6 +1,6 @@
 module knative.dev/kn-plugin-event/build
 
-go 1.25.5
+go 1.25.0
 
 require (
 	knative.dev/kn-plugin-event v0.0.0
@@ -192,7 +192,7 @@ require (
 	github.com/thanhpk/randstr v1.0.6 // indirect
 	github.com/therootcompany/xz v1.0.1 // indirect
 	github.com/theupdateframework/go-tuf v0.7.0 // indirect
-	github.com/theupdateframework/go-tuf/v2 v2.3.1 // indirect
+	github.com/theupdateframework/go-tuf/v2 v2.3.0 // indirect
 	github.com/transparency-dev/formats v0.0.0-20260119090622-e70c80e9488a // indirect
 	github.com/transparency-dev/merkle v0.0.2 // indirect
 	github.com/u-root/u-root v0.14.0 // indirect
@@ -242,4 +242,8 @@ require (
 	sigs.k8s.io/yaml v1.6.0 // indirect
 )
 
-replace knative.dev/kn-plugin-event => ../
+replace (
+	// Pin to v2.3.0 to avoid Go 1.25.5 requirement from v2.3.1+
+	github.com/theupdateframework/go-tuf/v2 => github.com/theupdateframework/go-tuf/v2 v2.3.0
+	knative.dev/kn-plugin-event => ../
+)
